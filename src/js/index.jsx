@@ -24,21 +24,25 @@ const TestimonialCard = ({ testimonial }) => {
   const { fullName, handle, profilePicSrc, blurb } = testimonial;
   return (
     <div className="w-[340px] flex flex-col gap-4 bg-white p-6 rounded-lg">
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-w-[340px]">
         <img
           src={profilePicSrc}
           alt="profile picture"
           className="w-12 h-12 object-cover"
         />
-        <div className="flex flex-col gap-px grow">
-          <span className="font-semibold text-lg text-neutral-900">
+        <div className="flex flex-col gap-px grow min-w-0">
+          <h1 className="font-semibold text-lg text-neutral-900 truncate min-w-0">
             {fullName}
-          </span>
-          <span className="font-normal text-sm text-neutral-600">{handle}</span>
+          </h1>
+          <p className="font-normal text-sm text-neutral-600 truncate min-w-0">
+            {handle}
+          </p>
         </div>
       </div>
 
-      <span className="font-normal text-base text-neutral-600">{blurb}</span>
+      <p className="font-normal text-base text-neutral-600 line-clamp-5">
+        {blurb}
+      </p>
     </div>
   );
 };

@@ -29,3 +29,11 @@ body {
   color: #000;
   font-weight: bold;
 }
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
